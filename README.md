@@ -2,7 +2,7 @@
 
 2D pixel-art walking simulator built in Unity.
 
-[Play in browser](https://lukaazman.github.io/PixeLife/)
+[▶ Play in browser](https://lukaazman.github.io/PixeLife/)
 
 ## Features
 
