@@ -12,13 +12,13 @@ public static class BuildScript
         var scenes = EditorBuildSettings.scenes;
         if (scenes.Length == 0)
         {
-            throw new BuildFailedException("No scenes are enabled in the Unity build settings.");
+            throw new System.Exception("No scenes are enabled in the Unity build settings.");
         }
 
         var report = BuildPipeline.BuildPlayer(scenes, BuildPath, BuildTarget.WebGL, BuildOptions.StrictMode);
         if (report.summary.result != UnityEditor.Build.Reporting.BuildResult.Succeeded)
         {
-            throw new BuildFailedException("WebGL build failed: " + report.summary.result);
+            throw new System.Exception("WebGL build failed: " + report.summary.result);
         }
 
         File.WriteAllText(Path.Combine(BuildPath, ".nojekyll"), string.Empty);
