@@ -15,6 +15,7 @@ public static class BuildScript
             throw new System.Exception("No scenes are enabled in the Unity build settings.");
         }
 
+        PlayerSettings.WebGL.compressionFormat = WebGLCompressionFormat.Disabled;
         var report = BuildPipeline.BuildPlayer(scenes, BuildPath, BuildTarget.WebGL, BuildOptions.StrictMode);
         if (report.summary.result != UnityEditor.Build.Reporting.BuildResult.Succeeded)
         {
